@@ -23,10 +23,10 @@
               @foreach($actualities as $actuality)
                 <div class="panel-heading">{{$actuality->name }}</div>
                 <div class="panel-body">
-                {{$actuality->content}}<br />
+                {{$actuality->content}}
                 @if(Auth::check() && Auth::user()->is_admin)
-                    <button class="btn btn-danger" name="deletePost" Onclick="window.location.href={{ url('actuality/delete/'.$actuality->id.'') }}">Supprimer</button>
-                    <button class="btn btn-primary" name="ModifyPost" Onclick="window.location.href={{ url('actuality/delete/'.$actuality->id.'') }}">Modifier</button>
+                    <a href="{{ url('actuality/delete/'.$actuality->id.'') }}"><span class="glyphicon glyphicon-remove pull-right"></span></a>
+                    <a href="{{ url('actuality/modify/'.$actuality->id.'') }}"><span class="glyphicon glyphicon-pencil pull-right"></span></a>
                 @endif
                 </div>
               @endforeach

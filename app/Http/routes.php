@@ -35,7 +35,7 @@ Route::group(['middleware' => ['web']], function () {
 
   Route::group(['prefix' => 'actuality', 'middleware' => ['auth']], function () {
     Route::post('add', 'ActualityController@create');
-    Route::post('delte/{id}', 'ActualityController@delete');
+    Route::get('delete/{id}', 'ActualityController@delete');
   });
 
 
