@@ -34,12 +34,13 @@ class ActualityController extends Controller
 
     $actuality->save();
 
-    return view('actuality');
+    $actualities = Actuality::distinct()->get();
+    return view('actuality',compact('actualities'));
 
   }
 
   public function delete($id)
   {
-    
+
   }
 }
