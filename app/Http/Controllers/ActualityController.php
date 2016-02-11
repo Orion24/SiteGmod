@@ -34,13 +34,16 @@ class ActualityController extends Controller
 
     $actuality->save();
 
-    $actualities = Actuality::distinct()->get();
-    return view('actuality',compact('actualities'));
+    return $this->show(); //show the view Actuality
 
   }
 
   public function delete($id)
   {
+      $actuality = Actuality::find($id);
 
+      $actuality->delete();
+
+      return $this->show(); //show the view Actuality
   }
 }
