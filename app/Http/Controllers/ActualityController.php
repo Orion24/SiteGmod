@@ -15,7 +15,7 @@ class ActualityController extends Controller
   public function show()
   {
       $actualities = Actuality::distinct()->get();
-      return view('actuality',compact('actualities'));
+      return view ('actuality',compact('actualities'));
   }
 
   public function create(Request $req)
@@ -44,6 +44,6 @@ class ActualityController extends Controller
 
       $actuality->delete();
 
-      return $this->show(); //show the view Actuality
+      return redirect('actuality');
   }
 }
