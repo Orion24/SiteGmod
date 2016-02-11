@@ -34,7 +34,7 @@ class ActualityController extends Controller
 
     $actuality->save();
 
-    return $this->show(); //show the view Actuality
+    return redirect('actuality');
 
   }
 
