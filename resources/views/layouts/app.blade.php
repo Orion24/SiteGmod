@@ -47,7 +47,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                    @if(Auth::check())
                     <li class="{{ Request::is('home') ? 'active': '' }}"><a href="{{ url('/home') }}">Home</a></li>
+                    @endif
 					          <li class="{{ Request::is('actuality') ? 'active': '' }}"><a href="{{ url('/actuality') }}">Actualité</a></li>
                     @if(Auth::check() && Auth::user()->is_admin)
                       <li class="{{ Request::is('admin') ? 'active': '' }}"><a href="{{ url('/admin') }}">Adminitration</a></li>
