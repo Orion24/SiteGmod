@@ -43,9 +43,11 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/home/edit', 'UserController@showForm');
       Route::post('/home/edit', 'UserController@processForm');
 
+      Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
+      {
+          Route::get('/admin', 'AdminController@show');
+      });
+
   });
-  Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
-  {
-      Route::get('/admin', 'AdminController@show');
-  });
+
 });
