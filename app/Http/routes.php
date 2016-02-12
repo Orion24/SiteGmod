@@ -44,5 +44,8 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('/home/edit', 'UserController@processForm');
 
   });
-
+  Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
+  {
+      Route::get('/admin', 'AdminController@show');
+  });
 });
