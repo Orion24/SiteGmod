@@ -8,12 +8,14 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Actuality;
+use App\User;
 
 class AdminController extends Controller
 {
   public function show()
   {
       $actualities = Actuality::distinct()->get();
-      return view ('admin',compact('actualities'));
+      $users = User::all();
+      return view ('admin', ['actualities' => $actualities, 'users' => $users]);
   }
 }

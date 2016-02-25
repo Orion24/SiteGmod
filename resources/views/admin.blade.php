@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appChosen')
 
 @section('content')
 <div class="container">
@@ -39,8 +39,14 @@
                     @endforeach
                   </div>
                   <div id="user" class="tab-pane fade">
-                    <h3>Menu 1</h3>
-                    <p>Some content in menu 1.</p>
+                    <div class="col-md-6">
+                    <select data-placeholder=" " class="chzn-select" tabindex="1">
+                      <option> </option>
+                      @foreach($users as $user)
+                          <option value="{{ $user->id }}">{{ $user->name }}</option>
+                      @endforeach
+                    </select>
+                  </div>
                   </div>
                 </div>
             </div>
