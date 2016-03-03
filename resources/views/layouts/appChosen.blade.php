@@ -89,8 +89,14 @@
     {!! Html::script('js/chosen.jquery.min.js')!!}
     <script type="text/javascript">
           $(".chzn-select").chosen({
-            placeholder_text_single: "Select an option",
-            no_results_text: "Oops, nothing found!"
+            placeholder_text_single: "Sélection d'un utilisateur",
+            no_results_text: "Utilisateur introuvable"
+          });
+          $(".chzn-select").chosen().change(function() {
+            alert($(this).val());
+            var div = document.getElementById('info');
+
+            div.innerHTML = div.innerHTML + 'Extra stuff';
           });
     </script>
 
