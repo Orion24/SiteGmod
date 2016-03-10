@@ -104,14 +104,19 @@
             {
                 if(users[index][0] == idUser)
                 {
-                    div.innerHTML = "<p style=\"font-size : 15pt;\"><strong>Nom : </strong>" + users[index][1] + "</p>";
+                    var content = '<p style="font-size : 15pt;"><strong>Nom : </strong>' + users[index][1] + '</p>';
+                    content += '<form action="{{ url('admin') }}" method="post">';
                     if(users[index][2] == 1)
                     {
-                      div.innerHTML += "<p style=\"font-size : 15pt;\"><strong>Est administrateur : </strong>" + "<input type=\"checkbox\" name=\"isAdmin\" checked></p>";
+                      content += '<label style="font-size : 15pt;">Est administrateur : </label> <input type="checkbox" name="isAdmin" value="1" checked><br/>';
                     }
                     else {
-                       div.innerHTML += "<p style=\"font-size : 15pt;\"><strong>Est administrateur : </strong>" + "<input type=\"checkbox\" name=\"isAdmin\"> </p>";
+                       content += '<label style="font-size : 15pt;">Est administrateur : </label> <input type="checkbox" value="1" name="isAdmin"><br/>';
                     }
+                    content += '<input type="hidden" value="' + users[index][0] + '" name="id">';
+                    content += '<button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-user"></i>Modifier</button>';
+                    content += '{!! csrf_field() !!}</form>';
+                    div.innerHTML = content;
                 }
             }
           });
