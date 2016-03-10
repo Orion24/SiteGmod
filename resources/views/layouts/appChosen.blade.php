@@ -93,10 +93,27 @@
             no_results_text: "Utilisateur introuvable"
           });
           $(".chzn-select").chosen().change(function() {
-            alert($(this).val());
+            var idUser = $(this).val();
+            var users = [
+            @foreach ($users as $user)
+                [ "{{ $user->id }}", "{{ $user->name }}", "{{ $user->is_admin }}" ],
+            @endforeach
+            ];
             var div = document.getElementById('info');
-
-            div.innerHTML = div.innerHTML + 'Extra stuff';
+            for (index = 0; index < users.length; index++)
+            {
+                if(users[index][0] == idUser)
+                {
+                    div.innerHTML = "<p style=\"font-size : 15pt;\"><strong>Nom : </strong>" + users[index][1] + "</p>";
+                    if(users[index][2] == 1)
+                    {
+                      div.innerHTML += "<p style=\"font-size : 15pt;\"><strong>Est administrateur : </strong>" + "<input type=\"checkbox\" name=\"isAdmin\" checked></p>";
+                    }
+                    else {
+                       div.innerHTML += "<p style=\"font-size : 15pt;\"><strong>Est administrateur : </strong>" + "<input type=\"checkbox\" name=\"isAdmin\"> </p>";
+                    }
+                }
+            }
           });
     </script>
 

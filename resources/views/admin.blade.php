@@ -46,6 +46,7 @@
                           <option value="{{ $user->id }}">{{ $user->name }}</option>
                       @endforeach
                     </select>
+                    <hr>
                     <div id="info">
                     </div>
                   </div>
