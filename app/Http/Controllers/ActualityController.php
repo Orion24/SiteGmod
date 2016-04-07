@@ -18,6 +18,13 @@ class ActualityController extends Controller
       return view ('actuality',compact('actualities'));
   }
 
+  public function showFormModify($id)
+  {
+      $actuality = Actuality::find($id);
+      $actualities = Actuality::distinct()->get();
+      return view ('actuality',compact('actuality'));
+  }
+
   public function create(Request $req)
   {
     $this->validate($req, [
@@ -43,6 +50,24 @@ class ActualityController extends Controller
       $actuality = Actuality::find($id);
 
       $actuality->delete();
+
+      return redirect('actuality');
+  }
+
+  public function modify(Request $req)
+  {
+      $this->validate($req, [
+        'articleTitle' => 'required|max:35',
+        'content' => 'required',
+        'id' => 'required'
+      ]);
+
+      $old_actuality = Actuality::find($req->input('id'));
+
+      $old_actuality->name = $req->input('articleTitle');
+      $old_actuality->content = $req->input('content');
+
+      $old_actuality->save();
 
       return redirect('actuality');
   }

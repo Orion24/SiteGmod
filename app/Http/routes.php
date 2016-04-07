@@ -36,6 +36,8 @@ Route::group(['middleware' => ['web']], function () {
   Route::group(['prefix' => 'actuality', 'middleware' => ['auth']], function () {
     Route::post('add', 'ActualityController@create');
     Route::get('delete/{id}', 'ActualityController@delete');
+    Route::get('modify/{id}', 'ActualityController@showFormModify');
+    Route::post('modify', 'ActualityController@modify');
   });
 
 
