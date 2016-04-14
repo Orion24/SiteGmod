@@ -39,17 +39,18 @@
                     @endforeach
                   </div>
                   <div id="user" class="tab-pane fade">
-                    <div class="col-md-6">
-                    <select data-placeholder=" " class="chzn-select" tabindex="1">
-                      <option> </option>
-                      @foreach($users as $user)
-                          <option value="{{ $user->id }}">{{ $user->name }}</option>
-                      @endforeach
-                    </select>
+                    <div class="panel-heading">Sélectionner un utilisateur</div>
+                    <div class="panel-body">
+                      <select data-placeholder=" " class="chzn-select" tabindex="1">
+                        <option> </option>
+                        @foreach($users as $user)
+                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                        @endforeach
+                      </select>
+                   </div>
                     <hr>
-                    <div id="info">
-                    </div>
-                  </div>
+                   <div id="info">
+                   </div>
                   </div>
                 </div>
             </div>

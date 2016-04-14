@@ -42,11 +42,11 @@
                 @foreach($actualities as $actuality)
                     <div class="panel-heading">{{$actuality->name }}</div>
                     <div class="panel-body">
-                    {{$actuality->content}}
-                    @if(Auth::check() && Auth::user()->is_admin)
-                    <a href="{{ url('actuality/delete/'.$actuality->id.'') }}"><span class="glyphicon glyphicon-remove pull-right"></span></a>
-                    <a href="{{ url('actuality/modify/'.$actuality->id.'') }}"><span class="glyphicon glyphicon-pencil pull-right"></span></a>
-                    @endif
+                      {{$actuality->content}}
+                      @if(Auth::check() && Auth::user()->is_admin)
+                      <a href="{{ url('actuality/delete/'.$actuality->id.'') }}"><span class="glyphicon glyphicon-remove pull-right"></span></a>
+                      <a href="{{ url('actuality/modify/'.$actuality->id.'') }}"><span class="glyphicon glyphicon-pencil pull-right"></span></a>
+                      @endif
                     </div>
                 @endforeach
               @endif
