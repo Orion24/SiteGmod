@@ -23,6 +23,8 @@
                                 <i class="fa fa-btn fa-user"></i>Poster
                             </button>
                         <form>
+                          <br />
+                          @include('shared.errors')
                         {!! csrf_field() !!}
                       </div>
                     @endif

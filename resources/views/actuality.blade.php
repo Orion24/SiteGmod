@@ -15,7 +15,8 @@
                         <br />
                         <button type="submit" class="btn btn-primary">
                             <i class="fa fa-btn fa-user"></i>Poster
-                        </button>
+                        </button> <br />
+                        @include('shared.errors')
                         {!! csrf_field() !!}
                     </form>
 
@@ -31,13 +32,18 @@
                        <input type="hidden" value="{{$actuality->id}}" name="id">
                        <button type="submit" class="btn btn-primary">
                            <i class="fa fa-btn fa-user"></i>Modifier
-                       </button>
+                       </button><br />
+                       @include('shared.errors')
                        {!! csrf_field() !!}
                    </form>
 
                  </div>
                @endif
               @endif
+            </div>
+            <br/>
+            <h2> Articles </h2>
+            <div class="panel panel-default">
               @if(!isset($actuality))
                 @foreach($actualities as $actuality)
                     <div class="panel-heading">{{$actuality->name }}</div>
@@ -51,7 +57,9 @@
                 @endforeach
               @endif
             </div>
+            </div>
         </div>
     </div>
+
 </div>
 @endsection
