@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Nom : Bertrand Nicolas
+ * Nom du fichier : UserController.php
+ * Description : Controlleur des utilisateurs
+ */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,11 +16,20 @@ use Hash;
 
 class UserController extends Controller
 {
+/**
+ * Affiche la forme utilisateur
+ * @return View la vue d'édition de l'utilisateur
+ */
     public function showForm()
     {
         return view('edit-user');
     }
 
+/**
+ * Traite le formulaire de modification du mot de passe
+ * @param  Request $req Formulaire de modification
+ * @return View       Page de login avec l'utilisateur déconnecté
+ */
     public function processForm(Request $req)
     {
         $this->validate($req, [

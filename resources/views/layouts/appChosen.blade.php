@@ -1,3 +1,10 @@
+{{--
+
+ * Nom : Bertrand Nicolas
+ * Nom du fichier : app.blade.php
+ * Description : Patron pour les vues avec la librairies Chosen
+
+--}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,7 +97,7 @@
     <script type="text/javascript">
           $(".chzn-select").chosen({
             placeholder_text_single: "Sélection d'un utilisateur",
-            no_results_text: "Utilisateur introuvable"
+            no_results_text: "Utilisateur introuvable" //Si aucun utilisateur est trouvé lors de la saisie
           });
           $(".chzn-select").chosen().change(function() {
             var idUser = $(this).val();
@@ -100,9 +107,9 @@
             @endforeach
             ];
             var div = document.getElementById('info');
-            for (index = 0; index < users.length; index++)
+            for (index = 0; index < users.length; index++) //On parcour tout les utilisateurs du tableau
             {
-                if(users[index][0] == idUser)
+                if(users[index][0] == idUser) //Si on trouve le bon utilisateur
                 {
                     var content = '<p style="font-size : 15pt;"><strong>Nom : </strong>' + users[index][1] + '</p>';
                     content += '<form action="{{ url('admin') }}" method="post">';

@@ -1,3 +1,8 @@
+{{--
+  Nom : Bertrand Nicolas
+  Nom du fichier : edit-actuality.blade.php
+  Description : Vue de modification d'une actualité
+--}}
 @extends('layouts.app')
 @section('content')
 <div class="container">

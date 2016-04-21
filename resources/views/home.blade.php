@@ -1,3 +1,8 @@
+{{--
+  Nom : Bertrand Nicolas
+  Nom du fichier : home.blade.php
+  Description : Vue d'affichage des informations de l'utilisateur
+--}}
 @extends('layouts.app')
 
 @section('content')

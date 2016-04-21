@@ -1,3 +1,10 @@
+{{--
+
+ * Nom : Bertrand Nicolas
+ * Nom du fichier : app.blade.php
+ * Description : Patron pour les vues
+
+--}}
 <!DOCTYPE html>
 <html lang="en">
 <head>

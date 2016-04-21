@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Nom : Bertrand Nicolas
+ * Nom du fichier : routes.php
+ * Description : Fichier contenant les routes
+ */
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -23,17 +27,18 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web']], function () { //Route global
     Route::auth();
 
-	Route::get('/', function () {
+	Route::get('/', function () { //Lorsque on accède au site
 		return view('index');
 	});
 
-	Route::get('/home', 'HomeController@show');
+	Route::get('/home', 'HomeController@show'); //Si on accède à home on appelle la fonction show dans HomeController.php
   Route::get('/actuality', 'ActualityController@show');
 
-  Route::group(['prefix' => 'actuality', 'middleware' => ['auth']], function () {
+  Route::group(['prefix' => 'actuality', 'middleware' => ['auth']], function ()
+  { //Pour pouvoir accéder à ces pages il faut être authentifié
     Route::post('add', 'ActualityController@create');
     Route::get('delete/{id}', 'ActualityController@delete');
     Route::get('modify/{id}', 'ActualityController@showFormModify');
@@ -46,7 +51,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('/home/edit', 'UserController@processForm');
 
       Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
-      {
+      { //Pour pouvoir accéder à ces pages il faut être administrateur
           Route::get('/admin', 'AdminController@show');
           Route::post('/admin', 'AdminController@processForm');
       });

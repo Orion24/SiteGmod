@@ -1,10 +1,17 @@
+{{--
+
+ * Nom : Bertrand Nicolas
+ * Nom du fichier : actuality.blade.php
+ * Description : Vue de l'actualité, Il y a l'ajout, la modification et l'affichage des actualités. Dans l'affichage des actualités on peut aussi les modifier et les supprimer
+
+--}}
 @extends('layouts.app')
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-              @if(Auth::check() && Auth::user()->is_admin)
+              @if(Auth::check() && Auth::user()->is_admin) {{--Vérifie si l'utilisateur est administrateur--}}
                 @if(!isset($actuality))
                   <div class="panel-heading">Ajouter une actualité</div>
                   <div class="panel-body">

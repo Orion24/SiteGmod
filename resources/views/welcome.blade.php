@@ -1,3 +1,8 @@
+<!--
+  Nom : Bertrand Nicolas
+  Nom du fichier : index.blade.php
+  Description : Vue de base, cette vue n'est plus utilisée
+ -->
 <!DOCTYPE html>
 <html>
     <head>

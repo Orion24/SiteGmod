@@ -1,3 +1,8 @@
+{{--
+  Nom : Bertrand Nicolas
+  Nom du fichier : admin.blade.php
+  Description : Vue d'administration où on peut ajouter, modifier et supprimer une actualité et modifié une utilisateur
+--}}
 @extends('layouts.appChosen')
 
 @section('content')

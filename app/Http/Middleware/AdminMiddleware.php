@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Nom : Bertrand Nicolas
+ * Nom du fichier : AdminMiddleware.php
+ * Description : Middleware pour la vérification si l'utilisateur est Administrateur 
+ */
 namespace App\Http\Middleware;
 
 use Closure;

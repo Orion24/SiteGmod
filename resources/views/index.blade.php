@@ -1,3 +1,8 @@
+{{--
+  Nom : Bertrand Nicolas
+  Nom du fichier : index.blade.php
+  Description : Vue d'accueil
+--}}
 @extends('layouts.app')
 
 @section('content')
@@ -8,7 +13,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    Welcome Bitches!
+                    Bienvenue sur le site du serveur DarkRP sur Garry's mod.
                 </div>
             </div>
         </div>
